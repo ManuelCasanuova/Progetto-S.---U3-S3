@@ -1,7 +1,8 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import tracksReducer from "../reducers/Index";
 
 const rootReducer = combineReducers({
-  tracks: tracksReducer,
+  tracksImported: tracksReducer,
 });
 
 const store = configureStore({

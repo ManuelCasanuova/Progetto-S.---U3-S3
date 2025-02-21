@@ -1,19 +1,19 @@
-import { TRACK_IMPORTATION } from "../actions";
+import { SELECT_TRACK } from "../actions";
 
 const initialState = {
-  content: [],
+  selectedTrack: null,
 };
 
-const tracksReducer = (state = initialState, action) => {
+const trackReducer = (state = initialState, action) => {
   switch (action.type) {
-    case TRACK_IMPORTATION:
+    case SELECT_TRACK:
       return {
         ...state,
-        content: [action.payload],
+        selectedTrack: action.payload,
       };
     default:
       return state;
   }
 };
 
-export default tracksReducer;
+export default trackReducer;
