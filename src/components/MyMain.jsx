@@ -1,5 +1,5 @@
 import { Row } from "react-bootstrap";
-import CardGenerator from "./CardGenerator";
+
 import GridGenerator from "./GridGenerator";
 import MyPlayer from "./MyPlayer";
 

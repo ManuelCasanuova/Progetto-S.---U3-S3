@@ -1,4 +1,14 @@
+import { useDispatch, useSelector } from "react-redux";
+import { updateSearchTerm } from "../redux/actions";
+
 const CustomNav = () => {
+  const searchTerm = useSelector((state) => state.searchTerm);
+  const dispatch = useDispatch();
+
+  const handleSubmit = () => {
+    dispatch(updateSearchTerm(inputValue));
+  };
+
   return (
     <nav className="navbar navbar-expand-md fixed-left justify-content-between" id="sidebar">
       <div className="container flex-column align-items-start">
@@ -31,9 +41,20 @@ const CustomNav = () => {
               </li>
               <li>
                 <div className="input-group mt-3">
-                  <input type="text" className="form-control" placeholder="Search" aria-label="Search" />
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Search"
+                    aria-label="Search"
+                    onChange={(e) => dispatch(updateSearchTerm(e.target.value))}
+                  />
                   <div className="input-group-append">
-                    <button className="btn btn-outline-secondary btn-sm h-100">GO</button>
+                    <button
+                      className="btn btn-outline-secondary btn-sm h-100"
+                      onClick={() => dispatch(updateSearchTerm(inputValue))}
+                    >
+                      GO
+                    </button>
                   </div>
                 </div>
               </li>
