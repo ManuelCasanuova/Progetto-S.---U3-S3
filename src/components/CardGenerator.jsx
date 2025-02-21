@@ -29,7 +29,7 @@ const CardGenerator = ({ artistName }) => {
         <Col className="text-center" key={track.album.id}>
           <Image fluid src={track.album.cover} alt={track.album.title} />
           <p className="mb-0">Track:{track.title}</p>
-          <p className="mb-0">Artist:{track.artist.name}</p>
+          <p className="mt-0 pt-1">Artist:{track.artist.name}</p>
         </Col>
       ))}
     </Row>
