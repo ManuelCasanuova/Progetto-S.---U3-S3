@@ -1,8 +1,11 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import tracksReducer from "../reducers/Index";
+
+import selectedTrackReducer from "../reducers/selectReducer";
+import favoritesReducer from "../reducers/favoriteReducer";
 
 const rootReducer = combineReducers({
-  tracksImported: tracksReducer,
+  selectedTrack: selectedTrackReducer,
+  favorite: favoritesReducer,
 });
 
 const store = configureStore({

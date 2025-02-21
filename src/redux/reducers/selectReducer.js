@@ -4,7 +4,7 @@ const initialState = {
   selectedTrack: null,
 };
 
-const trackReducer = (state = initialState, action) => {
+const selectedTrackReducer = (state = initialState, action) => {
   switch (action.type) {
     case SELECT_TRACK:
       return {
@@ -16,4 +16,4 @@ const trackReducer = (state = initialState, action) => {
   }
 };
 
-export default trackReducer;
+export default selectedTrackReducer;

@@ -1,10 +1,26 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Image, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 const MyPlayer = () => {
+  const selectedTrack = useSelector((state) => state.selectedTrack.selectedTrack);
+
+  console.log("SONO SELECTE TRACK", selectedTrack);
   return (
     <Container fluid className="fixed-bottom bg-container pt-1">
       <Row className="h-100">
-        <Col lg={10} className="offset-lg-2">
+        {selectedTrack && (
+          <Col lg={1} className="offset-lg-2">
+            <Row>
+              <Col>
+                <Image className="ms-5" src={selectedTrack.album.cover} height={80} width={100} />
+              </Col>
+              <Col>
+                <p>{selectedTrack.title}</p>
+              </Col>
+            </Row>
+          </Col>
+        )}
+        <Col lg={8}>
           <Row className="h-100 flex-column justify-content-center align-items-center">
             <Col xs={6} md={4} className="playerControls">
               <div className="d-flex">

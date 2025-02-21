@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import { Col, Image, Row } from "react-bootstrap";
-import { useDispatch } from "react-redux";
-import { SELECT_TRACK } from "../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { addToFavoritesAction, selectTrackAction } from "../redux/actions";
+
+import { Heart, HeartFill } from "react-bootstrap-icons";
 
 const CardGenerator = ({ artistName }) => {
   const [tracks, setTracks] = useState([]);
   const dispatch = useDispatch();
+
+  const favourites = useSelector((state) => state.favourite);
 
   useEffect(() => {
     const fetchMusic = async () => {
@@ -35,10 +39,13 @@ const CardGenerator = ({ artistName }) => {
             fluid
             src={track.album.cover}
             alt={track.album.title}
-            onClick={() => dispatch({ type: SELECT_TRACK, payload: track })}
+            onClick={() => dispatch(selectTrackAction(track))}
           />
-          <p className="mb-0">Track:{track.title}</p>
-          <p className="mt-0 pt-1">Artist:{track.artist.name}</p>
+          <p className="mb-0">Track: {track.title}</p>{" "}
+          <span>
+            <Heart color="red" size={20} onClick={() => dispatch(addToFavoritesAction(track.id))} />
+          </span>
+          <p className="mt-0 pt-1">Artist: {track.artist.name}</p>
         </Col>
       ))}
     </Row>
