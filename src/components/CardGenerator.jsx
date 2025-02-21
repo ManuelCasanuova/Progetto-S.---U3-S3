@@ -1,12 +1,43 @@
-import { Col, Image } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Col, Image, Row } from "react-bootstrap";
 
-const CardGenerator = () => {
+const CardGenerator = (/* { artistName } */) => {
+  const [tracks, setTracks] = useState([]);
+
+  useEffect(
+    () => {
+      const fetchMusic = async () => {
+        try {
+          let response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=queen`);
+          if (response.ok) {
+            let { data } = await response.json();
+            setTracks(data.slice(0, 4));
+            console.log(data);
+          } else {
+            throw new Error("Errore nel recupero delle canzoni");
+          }
+        } catch (err) {
+          console.log("Errore:", err);
+        }
+      };
+
+      fetchMusic();
+    },
+    [
+      /* artistName */
+    ]
+  );
+
   return (
-    <Col className="text-center">
-      <Image src="https://cdn-images.dzcdn.net/images/cover/99578b0bb8c838383c414a5b62b5e15d/250x250-000000-80-0-0.jpg" />
-      <p>Lorem</p>
-      <p>Lorem</p>
-    </Col>
+    <Row xs={1} sm={2} lg={3} xl={4} className="imgLinks py-3">
+      {tracks.map((track) => (
+        <Col className="text-center">
+          <Image src={track.album.cover} />
+          <p>Track:{track.title}</p>
+          <p>Artist:{track.artist.name}</p>
+        </Col>
+      ))}
+    </Row>
   );
 };
 export default CardGenerator;

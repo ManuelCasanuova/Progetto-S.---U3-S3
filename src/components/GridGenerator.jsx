@@ -1,12 +1,12 @@
 import { Col, Row } from "react-bootstrap";
 import CardGenerator from "./CardGenerator";
 
-const GridGenerator = () => {
+const GridGenerator = ({ artistName }) => {
   return (
     <Row>
       <Col xs={10}>
         <h2></h2>
-        <CardGenerator />
+        <CardGenerator artistName={artistName} />
       </Col>
     </Row>
   );
