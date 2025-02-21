@@ -26,10 +26,10 @@ const CardGenerator = ({ artistName }) => {
   return (
     <Row xs={1} sm={2} lg={3} xl={4} className="imgLinks py-3">
       {tracks.map((track) => (
-        <Col className="text-center">
-          <Image src={track.album.cover} />
-          <p>Track:{track.title}</p>
-          <p>Artist:{track.artist.name}</p>
+        <Col className="text-center" key={track.album.id}>
+          <Image fluid src={track.album.cover} alt={track.album.title} />
+          <p className="mb-0">Track:{track.title}</p>
+          <p className="mb-0">Artist:{track.artist.name}</p>
         </Col>
       ))}
     </Row>

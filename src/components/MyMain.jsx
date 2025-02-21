@@ -15,7 +15,7 @@ const MyMain = () => {
       </div>
       <GridGenerator artistName="Queen" />
       <GridGenerator artistName="Oasis" />
-      <GridGenerator artistName="Caribou" />
+      <GridGenerator artistName="Tycho" />
     </main>
   );
 };

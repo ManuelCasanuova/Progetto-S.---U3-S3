@@ -5,7 +5,7 @@ const GridGenerator = ({ artistName }) => {
   return (
     <Row>
       <Col xs={10}>
-        <h2></h2>
+        <h2>{artistName}</h2>
         <CardGenerator artistName={artistName} />
       </Col>
     </Row>
