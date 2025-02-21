@@ -13,9 +13,9 @@ const MyMain = () => {
           <a href="#">DISCOVER</a>
         </div>
       </div>
-      <GridGenerator />
-      <GridGenerator />
-      <GridGenerator />
+      <GridGenerator artistName="Queen" />
+      <GridGenerator artistName="Oasis" />
+      <GridGenerator artistName="Caribou" />
     </main>
   );
 };
