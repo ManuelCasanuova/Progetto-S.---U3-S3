@@ -2,7 +2,7 @@ import CustomNav from "./CustomNav";
 
 const MyAside = () => {
   return (
-    <aside class="col col-2">
+    <aside className="col col-2">
       <CustomNav />
     </aside>
   );
