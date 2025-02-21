@@ -9,9 +9,9 @@ const CardGenerator = ({ artistName }) => {
       try {
         let response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${artistName}`);
         if (response.ok) {
-          let { data } = await response.json();
-          setTracks(data.slice(0, 4));
-          console.log(data);
+          let { tracksArray } = await response.json();
+          setTracks(tracksArray.slice(0, 4));
+          console.log(tracksArray);
         } else {
           throw new Error("Errore nel recupero delle canzoni");
         }

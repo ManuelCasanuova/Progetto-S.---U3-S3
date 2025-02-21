@@ -3,7 +3,7 @@ const CustomNav = () => {
     <nav className="navbar navbar-expand-md fixed-left justify-content-between" id="sidebar">
       <div className="container flex-column align-items-start">
         <a className="navbar-brand" href="index.html">
-          <img src="assets/logo/logo.png" alt="Spotify Logo" width="131" height="40" />
+          <img src="../src/assets/logo/logo.png" alt="Spotify Logo" width="131" height="40" />
         </a>
         <button
           className="navbar-toggler"
