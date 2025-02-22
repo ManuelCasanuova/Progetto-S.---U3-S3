@@ -7,9 +7,10 @@ const initialState = {
 const searchReducerAction = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_SEARCH_TERM:
+      console.log("searchTerm aggiornato:", action.payload);
       return {
         ...state,
-        searchTerm: action.payload,
+        search: action.payload,
       };
     default:
       return state;

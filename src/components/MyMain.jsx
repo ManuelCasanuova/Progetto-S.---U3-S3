@@ -1,7 +1,7 @@
 import { Row } from "react-bootstrap";
-
 import GridGenerator from "./GridGenerator";
 import MyPlayer from "./MyPlayer";
+import FetchComponent from "./fetchComponent";
 
 const MyMain = () => {
   return (
@@ -16,6 +16,7 @@ const MyMain = () => {
             <a href="#">DISCOVER</a>
           </div>
         </Row>
+        {/*  <FetchComponent /> */}
         <GridGenerator artistName="Queen" />
         <GridGenerator artistName="Oasis" />
         <GridGenerator artistName="Tycho" />

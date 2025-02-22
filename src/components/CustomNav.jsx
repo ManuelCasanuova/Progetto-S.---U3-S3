@@ -1,12 +1,14 @@
-import { useDispatch, useSelector } from "react-redux";
-import { updateSearchTerm } from "../redux/actions";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
+import { setArtistSongAction } from "../redux/actions";
 
 const CustomNav = () => {
-  const searchTerm = useSelector((state) => state.searchTerm);
   const dispatch = useDispatch();
+  const [localSearch, setLocalSearch] = useState("");
 
-  const handleSubmit = () => {
-    dispatch(updateSearchTerm(inputValue));
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(setArtistSongAction(localSearch));
   };
 
   return (
@@ -40,23 +42,23 @@ const CustomNav = () => {
                 </a>
               </li>
               <li>
-                <div className="input-group mt-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Search"
-                    aria-label="Search"
-                    onChange={(e) => dispatch(updateSearchTerm(e.target.value))}
-                  />
-                  <div className="input-group-append">
-                    <button
-                      className="btn btn-outline-secondary btn-sm h-100"
-                      onClick={() => dispatch(updateSearchTerm(inputValue))}
-                    >
-                      GO
-                    </button>
+                <form onSubmit={handleSubmit}>
+                  <div className="input-group mt-3">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Search"
+                      aria-label="Search"
+                      value={localSearch}
+                      onChange={(e) => setLocalSearch(e.target.value)}
+                    />
+                    <div className="input-group-append">
+                      <button type="submit" className="btn btn-outline-secondary btn-sm h-100">
+                        GO
+                      </button>
+                    </div>
                   </div>
-                </div>
+                </form>
               </li>
             </ul>
           </div>

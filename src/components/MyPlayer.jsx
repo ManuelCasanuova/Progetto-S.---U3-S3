@@ -15,7 +15,7 @@ const MyPlayer = () => {
             <Col lg={6} className="ms-4">
               {selectedTrack && (
                 <div className="d-flex align-items-center">
-                  <Image src={selectedTrack.album.cover} height={80} width={100} />
+                  <Image src={selectedTrack.album.cover} height={80} width={90} />
                   <div>
                     <span className="text-white ms-1">{selectedTrack.title}</span>
                     <p className="text-white ms-1 mb-0">{selectedTrack.artist.name}</p>
