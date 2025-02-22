@@ -8,7 +8,7 @@ const CustomNav = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(setArtistSongAction(localSearch));
+    dispatch(setArtistSongAction(localSearch)); //Qui chiamo la fetch dal submit
   };
 
   return (
