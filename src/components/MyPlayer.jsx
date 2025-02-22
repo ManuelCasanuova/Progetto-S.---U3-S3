@@ -12,19 +12,13 @@ const MyPlayer = () => {
       <Row className="h-100">
         <Col lg={10} className="offset-lg-2">
           <Row className="h-100">
-            <Col lg={6} className="ms-4">
+            <Col lg={3} className="ms-4">
               {selectedTrack && (
                 <div className="d-flex align-items-center">
                   <Image src={selectedTrack.album.cover} height={80} width={90} />
-                  <div>
-                    <span className="text-white ms-1">{selectedTrack.title}</span>
-                    <p className="text-white ms-1 mb-0">{selectedTrack.artist.name}</p>
-                    <Heart
-                      className="ms-1"
-                      color="red"
-                      size={20}
-                      onClick={() => dispatch(addToFavoritesAction(track.id))}
-                    />
+                  <div className="ms-2">
+                    <span className="text-white">{selectedTrack.title}</span>
+                    <p className="text-white mb-0">{selectedTrack.artist.name}</p>
                   </div>
                 </div>
               )}
