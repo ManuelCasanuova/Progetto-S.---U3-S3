@@ -48,7 +48,7 @@ const MyPlayer = () => {
                   <img src="../src/assets/playerbuttons/repeat.png" alt="repeat" />
                 </a>
               </div>
-              <div className="progress mt-3">
+              <div className="progress mt-3" style={{ color: "white", backgroundColor: "#414141", height: "3px" }}>
                 <div role="progressbar"></div>
               </div>
             </Col>

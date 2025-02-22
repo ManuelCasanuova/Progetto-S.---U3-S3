@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Col, Image, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { addToFavoritesAction, selectTrackAction } from "../redux/actions";
 
 import { Heart, HeartFill } from "react-bootstrap-icons";
+import { addToFavoritesAction, selectTrackAction } from "../redux/actions";
 
 const CardGenerator = ({ artistName }) => {
   const [tracks, setTracks] = useState([]);
@@ -44,9 +44,9 @@ const CardGenerator = ({ artistName }) => {
                 alt={track.album.title}
                 onClick={() => dispatch(selectTrackAction(track))}
               />
-              <p className="mb-0">Track: {track.title}</p>{" "}
+              <p className="mb-0">Track: {track.title}</p>
               <span>
-                <Heart color="red" size={20} onClick={() => dispatch(addToFavoritesAction(track.id))} />
+                <Heart color="red" size={20} onClick={() => dispatch(addToFavoritesAction(track))} />
               </span>
               <p className="mt-0 pt-1">Artist: {track.artist.name}</p>
             </Col>

@@ -32,7 +32,7 @@ const CustomNav = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <ul>
+            <ul className="ps-0">
               <li>
                 <a className="nav-item nav-link d-flex align-items-center" href="#">
                   <i className="bi bi-house-door-fill"></i>&nbsp; Home

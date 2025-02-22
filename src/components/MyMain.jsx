@@ -7,7 +7,7 @@ import CardGenerator from "./CardGenerator";
 const MyMain = () => {
   return (
     <>
-      <main className="col-12 col-md-9 offset-md-3 mainPage">
+      <main className="col-12 col-md-9 offset-md-3 mainPage ">
         <Row>
           <div className="col-9 col-lg-11 mainLinks d-none d-md-flex">
             <a href="#">TRENDING</a>

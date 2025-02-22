@@ -128,6 +128,11 @@ ul {
 
 /*MAIN PAGE SECTION*/
 
+.mainPage {
+  margin-bottom: 7rem;
+  padding-top: 2rem;
+}
+
 .mainLinks {
   margin-top: 1.5rem;
   justify-content: space-evenly;
@@ -159,10 +164,6 @@ h2 {
   color: white;
   font-weight: 700;
   padding-top: 50px;
-}
-
-#hipHopSection {
-  margin-bottom: 7rem;
 }
 
 .mainPage img {
