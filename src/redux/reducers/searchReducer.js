@@ -1,13 +1,13 @@
 import { UPDATE_SEARCH_TERM } from "../actions";
 
 const initialState = {
-  searchTerm: "",
+  search: "",
 };
 
-const searchReducerAction = (state = initialState, action) => {
+const searchReducer = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_SEARCH_TERM:
-      console.log("searchTerm aggiornato:", action.payload);
+      console.log("search aggiornato:", action.payload);
       return {
         ...state,
         search: action.payload,
@@ -17,4 +17,4 @@ const searchReducerAction = (state = initialState, action) => {
   }
 };
 
-export default searchReducerAction;
+export default searchReducer;

@@ -1,7 +1,8 @@
 import { Row } from "react-bootstrap";
-import GridGenerator from "./GridGenerator";
+
 import MyPlayer from "./MyPlayer";
 import FetchComponent from "./fetchComponent";
+import CardGenerator from "./CardGenerator";
 
 const MyMain = () => {
   return (
@@ -16,10 +17,10 @@ const MyMain = () => {
             <a href="#">DISCOVER</a>
           </div>
         </Row>
-        {/*  <FetchComponent /> */}
-        <GridGenerator artistName="Queen" />
-        <GridGenerator artistName="Oasis" />
-        <GridGenerator artistName="Tycho" />
+        <FetchComponent />
+        <CardGenerator artistName="Queen" />
+        <CardGenerator artistName="Oasis" />
+        <CardGenerator artistName="Tycho" />
       </main>
       <MyPlayer />
     </>

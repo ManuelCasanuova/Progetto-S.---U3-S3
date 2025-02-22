@@ -2,7 +2,7 @@ export const SELECT_TRACK = "SELECT_TRACK";
 export const ADD_TO_FAVORITES = "ADD_TO_FAVORITES";
 export const REMOVE_FROM_FAVORITES = "REMOVE_FROM_FAVORITES";
 export const UPDATE_SEARCH_TERM = "UPDATE_SEARCH_TERM";
-export const SET_ARTIST_SONG = "SET_ARIST_SONG";
+export const SET_ARTIST_SONG = "SET_ARTIST_SONG";
 
 export const selectTrackAction = (track) => {
   return {
@@ -21,8 +21,8 @@ export const removeFromFavoritesAction = (trackId) => ({
   payload: trackId,
 });
 
-export const updateSearchTerm = (localSearch) => {
-  console.log(localSearch);
+export const searchReducerAction = (localSearch) => {
+  console.log("SONO IL NOME DELL'ARTISTA", localSearch);
   return {
     type: UPDATE_SEARCH_TERM,
     payload: localSearch,
@@ -36,13 +36,14 @@ export const setArtistSongAction = (localSearch) => {
       const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${localSearch}`);
 
       if (response.ok) {
-        const data = await response.json();
-        console.log(data);
+        const risultati = await response.json();
+        console.log("Risultati", risultati);
 
         dispatch({
           type: SET_ARTIST_SONG,
-          payload: data.data,
+          payload: risultati.data,
         });
+        console.log("Risultati disp", risultati.data);
       } else {
         console.log("Errore nella risposta dell'API");
       }

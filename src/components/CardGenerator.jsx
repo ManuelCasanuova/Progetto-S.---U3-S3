@@ -32,22 +32,27 @@ const CardGenerator = ({ artistName }) => {
   }, [artistName]);
 
   return (
-    <Row xs={1} sm={2} lg={3} xl={4} className="imgLinks py-3">
-      {tracks.map((track) => (
-        <Col className="text-center" key={track.id}>
-          <Image
-            fluid
-            src={track.album.cover}
-            alt={track.album.title}
-            onClick={() => dispatch(selectTrackAction(track))}
-          />
-          <p className="mb-0">Track: {track.title}</p>{" "}
-          <span>
-            <Heart color="red" size={20} onClick={() => dispatch(addToFavoritesAction(track.id))} />
-          </span>
-          <p className="mt-0 pt-1">Artist: {track.artist.name}</p>
-        </Col>
-      ))}
+    <Row>
+      <Col xs={10}>
+        <h2 className="text-white">{artistName}</h2>
+        <Row xs={1} sm={2} lg={3} xl={4} className="imgLinks py-3">
+          {tracks.map((track) => (
+            <Col className="text-center" key={track.id}>
+              <Image
+                fluid
+                src={track.album.cover}
+                alt={track.album.title}
+                onClick={() => dispatch(selectTrackAction(track))}
+              />
+              <p className="mb-0">Track: {track.title}</p>{" "}
+              <span>
+                <Heart color="red" size={20} onClick={() => dispatch(addToFavoritesAction(track.id))} />
+              </span>
+              <p className="mt-0 pt-1">Artist: {track.artist.name}</p>
+            </Col>
+          ))}
+        </Row>
+      </Col>
     </Row>
   );
 };

@@ -1,9 +1,8 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-
 import selectedTrackReducer from "../reducers/selectReducer";
 import favoritesReducer from "../reducers/favoriteReducer";
-import searchReducer from "../reducers/formValueReducer";
 import artistSongsReducer from "../reducers/artistSongsReducer";
+import searchReducer from "../reducers/searchReducer";
 
 const rootReducer = combineReducers({
   selectedTrack: selectedTrackReducer,

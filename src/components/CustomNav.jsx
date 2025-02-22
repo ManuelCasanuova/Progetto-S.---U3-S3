@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { setArtistSongAction } from "../redux/actions";
+import { searchReducerAction, setArtistSongAction } from "../redux/actions";
 
 const CustomNav = () => {
   const dispatch = useDispatch();
@@ -8,7 +8,9 @@ const CustomNav = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     dispatch(setArtistSongAction(localSearch)); //Qui chiamo la fetch dal submit
+    dispatch(searchReducerAction(localSearch));
   };
 
   return (
